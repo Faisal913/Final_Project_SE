@@ -1,0 +1,41 @@
+Pseudocode proses peminjaman dan pengembalian buku
+
+   Pengunjung mencari buku
+   READ id buku di data BUKU
+   IF Anggota menemukan buku yang diinginkan
+          IF Buku yang ingin dipinjam tersedia
+             READ No anggota di data ANGGOTA
+             IF Status Peminjam adalah ANGGOTA
+                 READ Status peminjaman di Data ANGGOTA
+                 IF Tidak ada tanggungan peminjaman
+                   IF sudah dilakukan transaksi peminjaman
+                        WRITE PEMINJAMAN
+                        Serahkan Buku dan bukti Peminjaman
+                   ELSE
+                        Transaksi Peminjaman   
+                 ELSE
+                   Tidak diperkenankan Meminjam
+             ELSE
+                 Tidak bisa meminjam buku
+          ELSE
+             Tidak jadi meminjam buku tersebut
+   ELSE
+          Buku tidak tersedia
+
+   IF Anggota ingin Mengembalikan
+           IF no transaksi dan buku sudah diserahkan
+              READ data transaksi di data PEMINJAM
+              WRITE status Pinjam di Data ANGGOTA
+              IF tanggal pengembalian melewati batas
+                  Hitung denda
+                  IF sudah bayar denda
+                     WRITE status Peminjaman di data BUKU
+                     Serahkan bukti pengembalian
+                  ELSE
+                     Bayar denda
+              ELSE
+                  Serahkan bukti pengembalian
+           ELSE
+              Serahkan Buku dan no transaksi   
+   ELSE
+           Anggota/pengunjung hanya membaca
